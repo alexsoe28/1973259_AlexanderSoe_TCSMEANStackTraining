@@ -1,0 +1,60 @@
+#mySideNav a{
+    position: absolute;
+    left: -200px;
+    transition:0.3s;
+    padding: 20px;
+    width: 300px;
+    text-decoration: none;
+    font-size:30px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+}
+
+#mySideNav a:hover{
+    left:0;
+}
+
+#home{
+    top: 100px;
+    background-color: lightcoral;
+}
+#about{
+    top: 200px;
+    background-color: skyblue;
+}
+
+#projects{
+    top: 300px;
+    background-color: lightslategray;
+}
+#contact{
+    top: 400px;
+    background-color: lightseagreen;
+}
+
+#textBox{
+ 
+    font-size: 20px;
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: 1000px;
+    margin-right: 450px;
+    margin-left: 550px; 
+}
+
+#contactText{
+    font-size: 25px;
+    position: relative;
+    margin-top: -40px;
+    margin-bottom: 100px;
+    margin-right: 450px;
+    margin-left: 550px;
+    bottom: 5px
+}
+
+input[type=text] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
