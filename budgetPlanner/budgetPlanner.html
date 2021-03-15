@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Manager</title>
+    <script src="budgetPlanner.js"></script>
+
+</head>
+<body>
+<a href="main.html">Back</a>
+<h2>Program Managers</h2>
+<form>
+    <label>Client Name</label>
+    <input type="text" id="clientName"/><br/>
+    <label>Project Name</label>
+    <input type="text" id="projectName"/><br/>
+    <label>Budget</label>
+    <input type="number" id="budget"/><br/>
+    <input type="button" value="Add" onclick="onFormSubmit()"/>
+    <input type="reset" value="Clear"><br>
+    <input type="button" value="Retrive from session" onclick="retrieveFromSession()"/><br/>
+    <hr/>
+    <table id="clientList">
+       <thead>
+           <tr>
+               <th>Client Name</th>
+               <th>Project Name</th>
+               <th>Budget</th>
+           </tr>
+       </thead> 
+       <tbody>
+
+       </tbody>
+    </table>
+</form>
+</body>
+</html>
