@@ -1,0 +1,11 @@
+https://github.com/alexsoe28/1973259_AlexanderSoe_TCSMEANStackTraining/tree/master/budgetPlanner
+1. Click on budgetPlanner folder to find source code
+2. Launch main.html to reach the main html page
+3. To add a budget click on Program Managers
+  -Enter Client Name, Project Name, and budget
+  -Click add to add the budget
+  -Click reset to clear 
+  -Click back to get back to the main page
+ 4.To view total budget click on Finance Teams
+  -You can view each separate client's budget
+  -Click back to get back to the main page
