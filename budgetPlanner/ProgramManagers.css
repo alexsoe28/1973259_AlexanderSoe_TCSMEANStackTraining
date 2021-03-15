@@ -5,8 +5,8 @@
     padding: 50px;
     margin: 20px;
 }
-.links{
+.text{
+    color: blue;
     font-size: 200%;
     font-family:Verdana;
-    color: red;
 }
