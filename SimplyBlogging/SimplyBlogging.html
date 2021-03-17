@@ -8,14 +8,23 @@
     <script src="SimplyBlogging.js"></script>
     <link rel="stylesheet" href="SimplyBlogging.css">
 </head>
-<body>
+<body style="background-color:#ECCCF3;">
     <form>
-        Title : <input type="text" id="title"/><br>
-        Description :<br> <textarea type="text" id="desc"></textarea><br>
-        <input type="file" id="imageId"/><br>
-        <script>retrieveFromStorage()</script>
-        <input type="button" value="Add Blog" onclick="addBlog(readData())"/> 
-        <hr/>
+        <h1>Simply Blogging</h1>
+        <div class="links">
+            <a href="#">Add Blog</a>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a><br>
+        </div>
+        <br><br><br>
+        <center class="submitter">
+            Title : <input class="titleBox" type="text" id="title"/><br>
+            Description : <textarea class="descBox" type="text" id="desc"></textarea><br>
+            <input type="file" id="imageId"/><br>
+            <script>retrieveFromStorage()</script>
+            <input type="button" value="Add Blog" onclick="addBlog(readData())"/> 
+        <center>
     </form>
 </body>
 </html>

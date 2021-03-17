@@ -1,4 +1,3 @@
-var blogNum = 1;
 function getBlogNumber(){
     if (!localStorage.getItem("blogNum")){
         localStorage.setItem("blogNum", "2");
@@ -42,17 +41,25 @@ function addBlog(blogData){
     var blogPost = document.createElement('div');
     blogPost.className = "article";
     var title = document.createElement('div');
+    title.style.fontSize = "200%";
+    title.style.textAlign = "center";
+    title.style.backgroundColor = "darkblue";
+    title.style.color = "white";
+    title.style.borderTopLeftRadius = "24px";
+    title.style.borderTopRightRadius = "24px";
+    title.style.padding = "10px";
     var titleText = document.createTextNode(blogData.title);
     title.appendChild(titleText);
     var desc = document.createElement('div');
+    desc.style.margin = '17px';
     var descText = document.createTextNode(blogData.desc);
     desc.appendChild(descText);
     var image = document.createElement('img');
     image.src = blogData.imageInfo;
     document.body.appendChild(blogPost);
     blogPost.appendChild(title);
-    blogPost.appendChild(desc);
     blogPost.appendChild(image);
+    blogPost.appendChild(desc);
     resetData();
 }
 function resetData() {
