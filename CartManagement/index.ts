@@ -7,55 +7,40 @@ class cartItem{
     }
 }
 
-function getCartNumber(){
-    if (!localStorage.getItem("cartNum")){
-        localStorage.setItem("cartNum", "2");
-        return 1;
-    }
-    else{
-        let currNum = parseInt(localStorage.getItem("cartNum"));
-        console.log("currNum = ", currNum);
-        let nextNum = currNum + 1;
-        console.log("nextnum = ", nextNum);
-        let currNumString = (nextNum).toString();
-        console.log("currNumString = ", currNumString);
-        localStorage.setItem("cartNum", currNumString);
-        return currNum;
-        
-    }
-}
-
 function getTotalValue(){
     let total:number = 0;
-    for(let i = 1; i < localStorage.length; i++){
+    for(let i = 1; i < localStorage.length + 1; i++){
         let obj = localStorage.getItem("cartInfo" + i);
         total += JSON.parse(obj).value;
     }
     return total;
 }
 
-function onFormSubmit(){
-    let cartNum = getCartNumber();
-    let cartItem = readFormData(cartNum);
-    localStorage.setItem("cartInfo" + cartNum, JSON.stringify(cartItem));    
-}
-
-function readFormData(cartNum) {
-    let name:string = (<HTMLInputElement>document.getElementById("name" + cartNum)).value;
-    console.log("name = ",name);
-    let value:number = parseInt((<HTMLInputElement>document.getElementById("value" + cartNum)).value);
-    console.log("number = ", value);
-    let newItem = new cartItem(name, value);
-    console.log(newItem);
-    return newItem; 
+function readFormData() {
+    for(let i = 1; i <= 6; i++){
+        if((<HTMLInputElement>document.getElementById("name" + i)).value && parseInt((<HTMLInputElement>document.getElementById("value" + i)).value)){
+            let name:string = (<HTMLInputElement>document.getElementById("name" + i)).value;
+            console.log("name = ",name);
+            let value:number = parseInt((<HTMLInputElement>document.getElementById("value" + i)).value);
+            console.log("value", value);
+            let newItem = new cartItem(name, value);
+            console.log(newItem)
+            localStorage.setItem("cartInfo" + i, JSON.stringify(newItem));
+            resetData(i);
+            return newItem; 
+        }
+    }
 }
 
 function retrieveFromSession() {
     console.log("localStorage = ", localStorage.length);
-    for(let i = 1; i < localStorage.length; i++){
-        let obj = localStorage.getItem("cartInfo" + i);
-        insertNewRecord(JSON.parse(obj))
-        console.log(obj);
+    for(let i = 1; i <= 6; i++){
+        if(localStorage.getItem("cartInfo" + i)){
+            console.log(i);
+            let cartItem = localStorage.getItem("cartInfo" + i);
+            console.log(cartItem);
+            insertNewRecord(JSON.parse(cartItem))
+        }
     }
 }
 
@@ -67,4 +52,8 @@ function insertNewRecord(cartItem){
     cell1.innerHTML=cartItem.itemName;                 // value placed 
     let cell2 = newRow.insertCell(1);          // cell created 
     cell2.innerHTML="$" + cartItem.value;                 // value placed
+}
+function resetData(cartNum) {
+    (<HTMLInputElement>document.getElementById("name" + cartNum)).value="";
+    (<HTMLInputElement>document.getElementById("value" + cartNum)).value="";
 }

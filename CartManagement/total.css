@@ -1,37 +1,35 @@
 .box{
     width: 1000px;
-    height: 550px;
-    border: 15px solid black;
+    height: 500px;
+    border: 10px solid black;
     padding: 50px;
     margin: 20px;
 }
 .text1{
-    font-size: 300%;
-    font-family:Verdana;
+    font-size: 450%;
 }
 .text2{
     font-size: 125%;
-    font-family:Verdana;
     color: blue;
 }
 .text3{
     font-size: 175%;
-    font-family:Verdana;
     color: red;
 }
 table {
-    font-family: verdana;
     border-collapse: collapse;
     width: 100%;
 }
 th{
     height: 10000%;
+    font-size: 175%;
     border: 2px solid lightblue;
     background-color: #3368FF;
     color: white;
 }
 td{
     border: 2px solid lightblue;
+    font-size: 150%;
     text-align: left;
     padding: 8px;
 }
