@@ -14,14 +14,18 @@
     </div>>
 </form>
 
-<table border = "1">
-    <tr>
-        <th style="width: 235px; font-size: 150%;">Name</th>
-        <th style="width: 235px; font-size: 150%;">Phone No.</th>
-    </tr>
-    <tr *ngFor="let cont of contactInfos">
-        <td>{{cont.name}}</td>
-        <td>{{cont.phoneNumber}}</td>
-    </tr>
+<table class="table table-dark table-striped table-bordered ">
+    <thead>
+        <tr>
+            <th style="width: 235px; font-size: 150%;">Name</th>
+            <th style="width: 235px; font-size: 150%;">Phone No.</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cont of contactInfos">
+            <td>{{cont.name}}</td>
+            <td>{{cont.phoneNumber}}</td>
+        </tr>
+    </tbody>
 </table>
 
