@@ -1,0 +1,27 @@
+<h1 class="jumbotron text-center" style="color:white; background-color: skyblue; font-size: 350%;">My Portfolio</h1>
+<div class="form-outline" style="font-size: 175%;">
+    Welcome {{user}}
+</div><br>
+<form #contactInformation="ngForm"(ngSubmit)="addContact(contactInformation.value)">
+    <div class="form-outline" style="font-size: 175%;">
+        Contact Name<input type="text" name="name" ngModel class="form-control"style="width: 25%; float: right; margin-right: 640px" />
+    </div><br>
+    <div class="form-outline" style="font-size: 175%;">
+        Phone No.<input type="text" name="number" ngModel class="form-control"style="width: 25%; float: right; margin-right: 640px" />
+    </div><br>
+    <div>
+        <button type="submit" style= "margin-left: 210px" class="btn btn-primary">Save</button>
+    </div>>
+</form>
+
+<table border = "1">
+    <tr>
+        <th style="width: 235px; font-size: 150%;">Name</th>
+        <th style="width: 235px; font-size: 150%;">Phone No.</th>
+    </tr>
+    <tr *ngFor="let cont of contactInfos">
+        <td>{{cont.name}}</td>
+        <td>{{cont.phoneNumber}}</td>
+    </tr>
+</table>
+

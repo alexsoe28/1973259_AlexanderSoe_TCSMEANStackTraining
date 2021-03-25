@@ -7,7 +7,6 @@ function retrieveFromSession() {
         insertNewRecord(JSON.parse(obj))
         console.log(obj);
     }
-    insertTotalBudget()
 }
 function onFormSubmit(){
     //alert("Event generated...")
@@ -29,6 +28,7 @@ function readFormData() {
 function insertNewRecord(data){
     var table = document.getElementById("clientList")
     var body = table.getElementsByTagName("tbody")[0];
+    console.log("body length = ", body.length - 1);
     var newRow = body.insertRow(body.length);  // row created 
 
     var cell1 = newRow.insertCell(0);          // cell created 

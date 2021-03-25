@@ -1,0 +1,16 @@
+<h1 class="jumbotron text-center" style="color:white; background-color: skyblue; font-size: 350%;">Login Form</h1>
+<form #userRef="ngForm"(ngSubmit)="checkUser(userRef.value)">
+    <div class="form-outline" style="font-size: 175%;">
+        Username<input type="text" name="user" ngModel class="form-control"style="width: 35%" />
+    </div>
+    <div class="form-outline" style="font-size: 175%;">
+        Password <input type="password" name="pass" ngModel class="form-control" style="width: 35%" />
+    </div>
+    <br>
+    <div>
+        <button type="button" style= "float: left" class="btn btn-primary" routerLink="/registration">Sign Up</button>
+        <button type="submit" style= "margin-left: 242px" class="btn btn-primary" *ngIf="!flag">Login</button>
+        <button type="submit" style= "margin-left: 242px" class="btn btn-primary" *ngIf="flag" [routerLink]="['/portfolio', userRef.value.user]">Login</button>        
+    </div>
+    <div style="color: red">{{msg}}</div>>
+</form>
