@@ -1,0 +1,13 @@
+1973259_AlexanderSoe_TCSMEANStackTraining
+All files are in AngularPortfolio.
+Instruction:
+1.Pull files from https://github.com/alexsoe28/1973259_AlexanderSoe_TCSMEANStackTraining/new/master/AngularPortfolio/AngularPortfolio
+2. In terminal type "ng serve" while inside "AngularPortfolio"
+3. The webpage will open from the login page.
+4. If you don't have a login click sign up and enter your credentials
+  -If you already have an account then a message will be written saying that the user already has an account
+5. After entering your credentials, click sign in.
+6. Enter your credentials and either click login twice or press enter once and then click login.
+  -If you did not enter your username and password correctly you will be denied access to the portfolio section
+7. Here you can add contact information by filling in the name and phonenumber sections.
+8. Click save to see it displayed in the table below.
