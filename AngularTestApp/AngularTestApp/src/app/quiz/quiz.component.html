@@ -1,0 +1,13 @@
+
+<form  #userAnswers="ngForm" (ngSubmit)="onQuizSubmit(userAnswers)">
+    <div *ngFor="let data of questionsArray">
+        <label for="{{data.Question}}">{{data.Question}}</label><br>
+        <input type='radio' ngModel [value] = "data.Answers[0]" [name]="data.QuestionNumber">{{data.Answers[0]}}<br>
+        <input type='radio' ngModel [value] = "data.Answers[1]" [name]="data.QuestionNumber">{{data.Answers[1]}}<br>
+        <input type='radio' ngModel [value] = "data.Answers[2]" [name]="data.QuestionNumber">{{data.Answers[2]}}<br>
+        <input type='radio' ngModel [value] = "data.Answers[3]" [name]="data.QuestionNumber">{{data.Answers[3]}}<br>
+    </div>>
+    <button type="submit" style= "float: left" class="btn btn-primary">Submit</button><br><br> 
+</form>
+{{fractionCorrect}}
+
