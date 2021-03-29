@@ -1,13 +1,31 @@
-
-<form  #userAnswers="ngForm" (ngSubmit)="onQuizSubmit(userAnswers)">
+<form style="font-size: 200%; margin-left: 200px"  #userAnswers="ngForm" (ngSubmit)="onQuizSubmit(userAnswers)">
+    <h1>Multiple Choice Test</h1>
     <div *ngFor="let data of questionsArray">
         <label for="{{data.Question}}">{{data.Question}}</label><br>
-        <input type='radio' ngModel [value] = "data.Answers[0]" [name]="data.QuestionNumber">{{data.Answers[0]}}<br>
-        <input type='radio' ngModel [value] = "data.Answers[1]" [name]="data.QuestionNumber">{{data.Answers[1]}}<br>
-        <input type='radio' ngModel [value] = "data.Answers[2]" [name]="data.QuestionNumber">{{data.Answers[2]}}<br>
-        <input type='radio' ngModel [value] = "data.Answers[3]" [name]="data.QuestionNumber">{{data.Answers[3]}}<br>
-    </div>>
-    <button type="submit" style= "float: left" class="btn btn-primary">Submit</button><br><br> 
+        <input type='radio' ngModel [value] = "data.Answers[0]" [name]="data.QuestionNumber" [disabled]="submitted">{{data.Answers[0]}} 
+        <p style="display: inline; color: green"[style.visibility]="submitted ? 'visible':'hidden'"*ngIf="data.Answers[0] == data.CorrectAnswer">{{correctResponseMsg}}</p><br>
+        <input type='radio' ngModel [value] = "data.Answers[1]" [name]="data.QuestionNumber" [disabled]="submitted">{{data.Answers[1]}}
+        <p style="display: inline; color: green"[style.visibility]="submitted ? 'visible':'hidden'"*ngIf="data.Answers[1] == data.CorrectAnswer">{{correctResponseMsg}}</p><br>
+        <input type='radio' ngModel [value] = "data.Answers[2]" [name]="data.QuestionNumber" [disabled]="submitted">{{data.Answers[2]}} 
+        <p style="display: inline; color: green"[style.visibility]="submitted ? 'visible':'hidden'"*ngIf="data.Answers[2] == data.CorrectAnswer">{{correctResponseMsg}}</p><br>
+        <input type='radio' ngModel [value] = "data.Answers[3]" [name]="data.QuestionNumber" [disabled]="submitted">{{data.Answers[3]}} 
+        <p style="display: inline; color: green"[style.visibility]="submitted ? 'visible':'hidden'"*ngIf="data.Answers[3] == data.CorrectAnswer">{{correctResponseMsg}}</p><br><br>
+    </div>
+    <button class="button" type="submit" style= "float: left" [disabled]="submitted">Submit</button>
+    <button style="margin-left: 100px;"class="button" type="submit" [style.visibility]="submitted ? 'visible':'hidden'"(click)="quizBreakdown()">Quiz Breakdown</button><br>
+    <h3 style="text-align: center; color: green">{{fractionPass}}</h3>
+    <h3 style="text-align: center; color: red">{{fractionFail}}</h3>
+    <div [style.visibility]="showQuizBreakdown ? 'visible':'hidden'"> 
+        <p class="incorrect">{{incorrectResponseMsgs[0]}}</p> 
+        <p class="incorrect">{{incorrectResponseMsgs[1]}}</p>
+        <p class="incorrect">{{incorrectResponseMsgs[2]}}</p>
+        <p class="incorrect">{{incorrectResponseMsgs[3]}}</p>
+        <p class="incorrect">{{incorrectResponseMsgs[4]}}</p> 
+        <p class="incorrect">{{incorrectResponseMsgs[5]}}</p> 
+        <p class="incorrect">{{incorrectResponseMsgs[6]}}</p> 
+        <p class="incorrect">{{incorrectResponseMsgs[7]}}</p> 
+        <p class="incorrect">{{incorrectResponseMsgs[8]}}</p>
+        <p class="incorrect">{{incorrectResponseMsgs[9]}}</p>
+    </div>
 </form>
-{{fractionCorrect}}
-
+    
