@@ -9,7 +9,9 @@ import { Task } from 'task.model';
 })
 export class TaskTrackerComponent implements OnInit {
   errorMsg:string = "Must complete all fields";
-  error:boolean = false;
+  errorMsg1:string = "Cannot have duplicate IDs";
+  incompleteFields:boolean = false;
+  dupIds:boolean = false;
   taskArray:Array<Task>=[];
   constructor(public taskSer:TaskService) { }
 
@@ -19,8 +21,14 @@ export class TaskTrackerComponent implements OnInit {
 
   storeTask(taskRef:any){
     if(!taskRef.id || !taskRef.name || !taskRef.task || !taskRef.deadline){
-      this.error = true;
+      this.incompleteFields = true;
       return;
+    }
+    for(let i = 0; i < this.taskArray.length; i++){
+      if(this.taskArray[i].id == taskRef.id){
+        this.dupIds = true;
+        return;
+      }
     }
     console.log(taskRef.id);
     console.log(taskRef.name);

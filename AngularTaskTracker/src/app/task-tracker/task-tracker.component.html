@@ -25,7 +25,8 @@
         <button type="submit" mat-raised-button color="primary">Submit</button>
         <button style="margin-left: 50px;"type="reset" mat-raised-button color="primary">Reset</button>
     </form>
-    <p style="color:red" [style.visibility]="error ? 'visible':'hidden'">{{errorMsg}}</p>
+    <p style="color:red" [style.visibility]="incompleteFields ? 'visible':'hidden'">{{errorMsg}}</p>
+    <p style="color:red" [style.visibility]="dupIds ? 'visible':'hidden'">{{errorMsg1}}</p>
 </div>
 <div >
     <table class="table table-striped table-bordered ">
