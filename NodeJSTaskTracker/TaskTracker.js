@@ -88,18 +88,22 @@ let server = http.createServer((req,res)=> {
                 }
             }
         }else if(pathInfo=="/display"){
-                // read from file 
-                // convert to json 
-                //iterator loop 
-                // create tableData variable using backticks 
-                /*
+            let jsonData = fs.readFileSync("tasks.json");
+            let jsonDataString = jsonData.toString();
+            let jsonTaskArray = JSON.parse(jsonDataString);
+            for(let i = 0; i < jsonTaskArray.length; i ++){
+                let tableEntry = `
                     <table>
                     <tr>
-                            <td>${variableName}</td>
+                        <td>${jsonTaskArray[i].employeeId}</td>
+                        <td>${jsonTaskArray[i].taskId}</td>
+                        <td>${jsonTaskArray[i].task}</td>
+                        <td>${jsonTaskArray[i].deadline}</td>
                     </tr>
                     </table>
-                    res.end(tableDatavariable);
-                */
+                `;
+                res.write(tableEntry)
+            }
         }
     }
     res.end();
