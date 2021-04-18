@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course</title>
+</head>
+<script>
+    function reset() {
+        document.getElementById('courseId').value='';
+        document.getElementById('courseName').value='';
+        document.getElementById('description').value='';
+        document.getElementById('amount').value='';
+    }
+</script>
+<body>
+    <center>
+        <form action="/addCourse" method="post">
+            <h1>Add Course</h1>
+            <label>Course ID:</label>
+            <input id="courseId" type="number" name="id"/><br/>
+            <label>Course Name:</label>
+            <input id="courseName" type="text" name="name"/><br/>
+            <label>Description:</label>
+            <input id="description"type="text" name="desc"/><br/>
+            <label>Amount:</label>
+            <input id="amount" type="text" name="amount"/><br/>
+            <input type="submit" value="Add"/>
+            <input type="reset" value="Reset" onclick="reset()"/>
+        </form>
+    <center>
+</body>
+</html>
